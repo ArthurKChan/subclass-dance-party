@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url(src/bg.jpg);
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -32,4 +32,10 @@ body, a:link, a:visited, a:active{
 .blue{
   border: 10px solid blue;
   border-radius: 10px;
+}
+.invader{
+  background-image: url(src/invader.png);
+  height: 20px;
+  width: 20px;
+  position:absolute;
 }
