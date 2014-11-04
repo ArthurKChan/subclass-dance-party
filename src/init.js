@@ -1,5 +1,9 @@
 $(document).ready(function(){
-  window.dancers = [];
+  window.dancers = [[],[]];
+  window.aliens = dancers[0];
+  window.rockets = dancers[1];
+
+  var earth = $('#earth');
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -26,9 +30,14 @@ $(document).ready(function(){
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-    dancers.push(dancer);
+    if(dancer.constructor === ColorChangingDancer){
+      rockets.push(dancer);
+    } else if(dancer.constructor === MovingDancer){
+      aliens.push(dancer.$node);
+    };
     $('body').append(dancer.$node);
   });
+console.table(dancers);
   $(".lineUpButton").on("click", function(event){
     var lineFunctionName = $(this).data("line-up-function-name");
     var lineUpFunction = window[lineFunctionName];

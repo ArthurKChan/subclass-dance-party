@@ -1,5 +1,8 @@
 var MovingDancer = function(top, left, timeBetweenSteps) {
   Dancer.apply(this, arguments);
+  this.$node.addClass('alien');
+  this.$node.append('<img src="src/invader.png" class="invaderImg" />');
+  this.$node.css({border: 'none'});
 }
 
 MovingDancer.prototype = Object.create(Dancer.prototype);
