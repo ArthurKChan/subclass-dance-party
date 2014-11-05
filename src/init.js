@@ -33,16 +33,22 @@ $(document).ready(function(){
     if(dancer.constructor === ColorChangingDancer){
       rockets.push(dancer);
     } else if(dancer.constructor === MovingDancer){
-      aliens.push(dancer.$node);
+      aliens.push(dancer);
     };
     $('body').append(dancer.$node);
+
+    $(".invaderImg").on("mouseover", function(event){
+      $(this).remove();
+    });
+
   });
-console.table(dancers);
+
   $(".lineUpButton").on("click", function(event){
     var lineFunctionName = $(this).data("line-up-function-name");
     var lineUpFunction = window[lineFunctionName];
     lineUp();
   });
+
 
 });
 
